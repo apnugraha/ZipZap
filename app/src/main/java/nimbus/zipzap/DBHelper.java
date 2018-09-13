@@ -47,6 +47,7 @@ public class DBHelper extends SQLiteOpenHelper {
                 "image integer null);";
         Log.d("Data", "onCreate: " + sql);
         db.execSQL(sql);
+        db.close();
 
 //        sql = "INSERT INTO goods (id, name, price, category, seller, stats, image)" +
 //                "VALUES" +

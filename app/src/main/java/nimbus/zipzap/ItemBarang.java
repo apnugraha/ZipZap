@@ -59,6 +59,9 @@ public class ItemBarang extends AppCompatActivity {
 
             adapter.add(new Barang(id, name, price, category, seller, stats, image));
         }
+
+        db.close();
+        cursor.close();
     }
 
 //    public void goToNextActivity(View v) {

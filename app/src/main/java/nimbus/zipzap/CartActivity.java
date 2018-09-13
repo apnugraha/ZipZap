@@ -48,6 +48,14 @@ public class CartActivity extends AppCompatActivity {
                 RefreshList();
             }
         });
+        dbData.close();
+        cursor.close();
+    }
 
+    @Override
+    protected void onDestroy() {
+        dbData.close();
+        cursor.close();
+        super.onDestroy();
     }
 }

@@ -56,14 +56,17 @@ public class ListBarang extends ArrayAdapter<Barang>{
                     btnTog.setText("Get");
                     SQLiteDatabase db = dbHelper.getWritableDatabase();
                     db.execSQL("UPDATE goods SET stats = 0 WHERE id = '"+barang.id+"'");
+                    db.close();
 //                    CartActivity.ma.RefreshList();
                 } else {
                     barang.stats = 1;
                     btnTog.setText("Yours");
                     SQLiteDatabase db = dbHelper.getWritableDatabase();
                     db.execSQL("UPDATE goods SET stats = 1 WHERE id = '"+barang.id+"'");
+                    db.close();
 //                    CartActivity.ma.RefreshList();
                 }
+                dbHelper.close();
             }
         });
 
